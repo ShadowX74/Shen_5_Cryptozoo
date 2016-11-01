@@ -9,6 +9,14 @@ package cryptozoo;
  *
  * @author ShadowX
  */
-public class ZooAnimal {
+public interface ZooAnimal {
     
+    public void setFoodType(String food);
+
+    public void getFoodType();
+
+    public void setFoodAmt(int amt);
+
+    public void getFoodAmt();
+                  
 }

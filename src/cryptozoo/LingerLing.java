@@ -9,6 +9,21 @@ package cryptozoo;
  *
  * @author ShadowX
  */
-public class LingerLing {
-    
+public class LingerLing extends Animal {
+
+    public void setFoodType(String food) {
+       
+    }
+
+    public void getFoodType() {
+        
+    }
+
+    public void setFoodAmt(int amt) {
+        
+    }
+
+    public void getFoodAmt() {
+        
+    }
 }

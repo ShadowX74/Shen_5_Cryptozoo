@@ -9,6 +9,6 @@ package cryptozoo;
  *
  * @author ShadowX
  */
-public class FossilRelative {
+public class FossilRelative extends LingerLing{
     
 }

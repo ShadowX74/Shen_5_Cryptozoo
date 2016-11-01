@@ -9,6 +9,6 @@ package cryptozoo;
  *
  * @author ShadowX
  */
-public class Animal {
+public abstract class Animal implements ZooAnimal{
     
 }

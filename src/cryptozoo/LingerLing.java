@@ -11,19 +11,26 @@ package cryptozoo;
  */
 public class LingerLing extends Animal {
 
-    public void setFoodType(String food) {
-       
+    public LingerLing(String nam, String orig, int danger) {
+        super(nam, orig, danger);
+
     }
 
-    public void getFoodType() {
-        
+    public void setFoodType(String food) {
+    }
+
+    public String getFoodType() {
+        return "none";
     }
 
     public void setFoodAmt(int amt) {
-        
     }
 
-    public void getFoodAmt() {
-        
+    public int getFoodAmt() {
+        return 0;
+    }
+
+    public int foodPerWeek() {
+        throw new UnsupportedOperationException("Not supported for this class");
     }
 }

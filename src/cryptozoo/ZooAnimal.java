@@ -13,10 +13,10 @@ public interface ZooAnimal {
     
     public void setFoodType(String food);
 
-    public void getFoodType();
+    public String getFoodType();
 
     public void setFoodAmt(int amt);
 
-    public void getFoodAmt();
+    public int getFoodAmt();
                   
 }

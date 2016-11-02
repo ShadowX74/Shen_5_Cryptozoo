@@ -14,15 +14,35 @@ import java.util.ArrayList;
 public class Zoo {
     ArrayList<Animal> zooList = new ArrayList();
     
-    private void list() {
+    public void list() {
+        Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5);
+        Mythical b = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical c = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical d = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical e = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical f = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical g = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical h = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical i = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical j = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        
+        zooList.add(a);
+        zooList.add(b);
+        zooList.add(c);
+        zooList.add(d);
         zooList.add(e);
+        zooList.add(f);
+        zooList.add(g);
+        zooList.add(h);
+        zooList.add(i);
+        zooList.add(j);
     }
     
-    private void showAll() {
+    public void showAll() {
         for (Animal i : zooList) {
-            System.out.println(zooList[i].toString());
-            System.out.println(zooList[i].getFoodType());
-            System.out.println(zooList[i].getFoodAmt());
+            System.out.println(i.toString());
+            System.out.println("Food Type: " + i.getFoodType());
+            System.out.println("Food Amount: " + i.getFoodAmt());
             System.out.println("______________________________________");
         }
     }

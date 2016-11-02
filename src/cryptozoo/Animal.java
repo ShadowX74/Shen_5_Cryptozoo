@@ -10,5 +10,22 @@ package cryptozoo;
  * @author ShadowX
  */
 public abstract class Animal implements ZooAnimal{
+    String name, origin;
+    int dangerRating;
     
+    public Animal(String nam, String orig, int danger) {
+        this.name = nam;
+        this.origin = orig;
+        this.dangerRating = danger;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s \nOrigin: %s \nDanger Rating: %d", this.name, this.origin, this.dangerRating);
+    }
+
+          
+
+ 
+    public abstract int foodPerWeek();
 }

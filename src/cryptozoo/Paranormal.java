@@ -13,7 +13,7 @@ public class Paranormal extends Animal {
     String foodType;
     int foodAmt;
     
-    public Paranormal(String nam, String orig, int danger, String food, int amt) {
+    public Paranormal(String nam, String orig, int danger) {
         super(nam, orig, danger);
         this.foodType = "meat";
         this.foodAmt = 5;

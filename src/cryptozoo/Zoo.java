@@ -16,15 +16,15 @@ public class Zoo {
     
     public void list() {
         Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5);
-        Mythical b = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical c = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical d = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical e = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical f = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical g = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical h = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical i = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
-        Mythical j = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 4);
+        Mythical b = new Mythical("Dragon", "Dragon Tales", 10, "Baby Feet", 8);
+        Mythical c = new Mythical("Narwhal", "Deep Blue Sea", 8, "Otters", 5);
+        Mythical d = new Mythical("Centaur", "My Little Pony", 7, "Other Centaurs", 1);
+        Paranormal e = new Paranormal("Nocturne", "Dreamland", 100);
+        Paranormal f = new Paranormal("Bloody Mary", "Mirrors", 20);
+        LingerLing g = new LingerLing("Lings", "The Swarm", 8);
+        LingerLing h = new LingerLing("BroodLord", "Deep Space", 50);
+        FossilRelative i = new FossilRelative("Amotherbica", "Deep Space Planet", 4);
+        FossilRelative j = new FossilRelative("Bromeriland", "Dead Planet", 7);
         
         zooList.add(a);
         zooList.add(b);

@@ -12,11 +12,14 @@ package cryptozoo;
 public abstract class Animal implements ZooAnimal{
     String name, origin;
     int dangerRating;
+    int x, y;
     
-    public Animal(String nam, String orig, int danger) {
+    public Animal(String nam, String orig, int danger, int x, int y) {
         this.name = nam;
         this.origin = orig;
         this.dangerRating = danger;
+        this.x = x;
+        this.y = y;
     }
 
     @Override

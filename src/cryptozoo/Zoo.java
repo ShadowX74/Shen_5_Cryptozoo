@@ -6,7 +6,7 @@
 package cryptozoo;
 
 import java.util.ArrayList;
-
+import java.util.Random;
 /**
  *
  * @author ShadowX
@@ -14,17 +14,19 @@ import java.util.ArrayList;
 public class Zoo {
     ArrayList<Animal> zooList = new ArrayList();
     
+    static Random rand = new Random();
+    
     public void list() {
-        Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5);
-        Mythical b = new Mythical("Dragon", "Dragon Tales", 10, "Baby Feet", 8);
-        Mythical c = new Mythical("Narwhal", "Deep Blue Sea", 8, "Otters", 5);
-        Mythical d = new Mythical("Centaur", "My Little Pony", 7, "Other Centaurs", 1);
-        Paranormal e = new Paranormal("Nocturne", "Dreamland", 100);
-        Paranormal f = new Paranormal("Bloody Mary", "Mirrors", 20);
-        LingerLing g = new LingerLing("Lings", "The Swarm", 8);
-        LingerLing h = new LingerLing("BroodLord", "Deep Space", 50);
-        FossilRelative i = new FossilRelative("Amotherbica", "Deep Space Planet", 4);
-        FossilRelative j = new FossilRelative("Bromeriland", "Dead Planet", 7);
+        Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        Mythical b = new Mythical("Dragon", "Dragon Tales", 10, "Baby Feet", 8, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        Mythical c = new Mythical("Narwhal", "Deep Blue Sea", 8, "Otters", 5, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        Mythical d = new Mythical("Centaur", "My Little Pony", 7, "Other Centaurs", 1, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        Paranormal e = new Paranormal("Nocturne", "Dreamland", 100, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        Paranormal f = new Paranormal("Bloody Mary", "Mirrors", 20, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        LingerLing g = new LingerLing("Lings", "The Swarm", 8, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        LingerLing h = new LingerLing("BroodLord", "Deep Space", 50, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        FossilRelative i = new FossilRelative("Amotherbica", "Deep Space Planet", 4, rand.nextInt(49) +1, rand.nextInt(49) +1);
+        FossilRelative j = new FossilRelative("Bromeriland", "Dead Planet", 7, rand.nextInt(49) +1, rand.nextInt(49) +1);
         
         zooList.add(a);
         zooList.add(b);

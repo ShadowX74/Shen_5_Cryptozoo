@@ -11,8 +11,8 @@ package cryptozoo;
  */
 public class LingerLing extends Animal {
 
-    public LingerLing(String nam, String orig, int danger) {
-        super(nam, orig, danger);
+    public LingerLing(String nam, String orig, int danger, int x, int y) {
+        super(nam, orig, danger, x, y);
 
     }
 

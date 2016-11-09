@@ -13,8 +13,8 @@ public class Mythical extends Animal {
     String foodType;
     int foodAmt;
 
-    public Mythical(String nam, String orig, int danger, String food, int amt) {
-        super(nam, orig, danger);
+    public Mythical(String nam, String orig, int danger, String food, int amt, int x, int y) {
+        super(nam, orig, danger, x, y);
         this.foodType = food;
         this.foodAmt = amt;
 

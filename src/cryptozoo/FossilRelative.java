@@ -11,8 +11,8 @@ package cryptozoo;
  */
 public class FossilRelative extends LingerLing{
     
-    public FossilRelative(String nam, String orig, int danger) {
-        super(nam, orig, danger);
+    public FossilRelative(String nam, String orig, int danger, int x, int y) {
+        super(nam, orig, danger, x, y);
     }
     
     public int foodPerWeek() {

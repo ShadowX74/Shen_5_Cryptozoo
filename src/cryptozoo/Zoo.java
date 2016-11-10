@@ -42,10 +42,37 @@ public class Zoo {
     
     public void showAll() {
         for (Animal i : zooList) {
+            if (i.onTour == true) {
+                System.out.println("Out On Tour");
+                System.out.println("");
+            }
             System.out.println(i.toString());
             System.out.println("Food Type: " + i.getFoodType());
             System.out.println("Food Amount: " + i.getFoodAmt());
             System.out.println("______________________________________");
+        }
+    }
+    
+    public void showTour() {
+        for (Animal i : zooList) {
+            if (i.onTour == true) {
+                System.out.println("Out On Tour");
+                System.out.println(i.toString());
+                System.out.println("Food Type: " + i.getFoodType());
+                System.out.println("Food Amount: " + i.getFoodAmt());
+                System.out.println("______________________________________");
+            }
+        }
+    }
+    
+    public void showNotTour() {
+        for (Animal i : zooList) {
+            if (i.onTour == false) {
+                System.out.println(i.toString());
+                System.out.println("Food Type: " + i.getFoodType());
+                System.out.println("Food Amount: " + i.getFoodAmt());
+                System.out.println("______________________________________");
+            }
         }
     }
 }

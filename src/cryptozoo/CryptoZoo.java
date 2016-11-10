@@ -86,9 +86,22 @@ public class CryptoZoo {
                 System.out.println("2) Paranormal");
                 System.out.println("3) LingerLing");
                 System.out.println("4) FossilRelative");
+                int type = scan.nextInt();
                 
                 System.out.println("Where did the animal come from?");
                 String orig = scan.nextLine();
+                System.out.println("How dangerous is it?");
+                int dang = scan.nextInt();
+                if (type == 1) {
+                    System.out.println("Where does the animal eat?");
+                    String foodTyp = scan.nextLine();
+                    System.out.println("How much food does it eat per day?");
+                    int foodAmt = scan.nextInt();
+                    Mythical added = ();
+                    z.zooList.add(added);
+                }
+                
+                
     }
     
     private static void removeAnimal(Zoo z) {

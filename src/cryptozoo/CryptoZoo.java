@@ -5,6 +5,7 @@
  */
 package cryptozoo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -19,12 +20,12 @@ public class CryptoZoo {
     static boolean play = true;
     static int counter;
     static int goal;
-    
+
     static char[][] map = new char[51][51];
     static int[][] animals = new int[10][2];
-    
+
     static Player player = new Player("Hero", 25, 25, 'U');
-    
+
     /**
      * @param args the command line arguments
      * @throws java.lang.InterruptedException
@@ -35,7 +36,7 @@ public class CryptoZoo {
         menagerie.list();
         choose(menagerie);
     }
-    
+
     private static void choose(Zoo z) throws InterruptedException {
         System.out.println("Welcome to your zoo! Here are your animals.");
         System.out.println("____________________________________________");
@@ -76,89 +77,105 @@ public class CryptoZoo {
             }
         }
     }
-    
+
     private static void addAnimal(Zoo z) {
         System.out.println("What animal would you like to add?");
-                String animal = scan.nextLine();
-                animal = scan.nextLine();
-                System.out.println("What type is the animal?");
-                System.out.println("1) Mythical");
-                System.out.println("2) Paranormal");
-                System.out.println("3) LingerLing");
-                System.out.println("4) FossilRelative");
-                int type = scan.nextInt();
-                
-                System.out.println("Where did the animal come from?");
-                String orig = scan.nextLine();
-                System.out.println("How dangerous is it?");
-                int dang = scan.nextInt();
-                if (type == 1) {
-                    System.out.println("Where does the animal eat?");
-                    String foodTyp = scan.nextLine();
-                    System.out.println("How much food does it eat per day?");
-                    int foodAmt = scan.nextInt();
-                    Mythical added = ();
-                    z.zooList.add(added);
-                }
-                
-                
+        String animal = scan.nextLine();
+        animal = scan.nextLine();
+        System.out.println("What type is the animal?");
+        System.out.println("1) Mythical");
+        System.out.println("2) Paranormal");
+        System.out.println("3) LingerLing");
+        System.out.println("4) FossilRelative");
+        int type = scan.nextInt();
+
+        if (type > 4 || type < 1) {
+            System.out.println("Not a valid type.");
+        } else {
+            System.out.println("Where did the animal come from?");
+            String orig = scan.nextLine();
+            orig = scan.nextLine();
+            System.out.println("How dangerous is it?");
+            int dang = scan.nextInt();
+            if (type == 1) {
+                System.out.println("What does the animal eat?");
+                String foodTyp = scan.nextLine();
+                foodTyp = scan.nextLine();
+                System.out.println("How much food does it eat per day?");
+                int foodAmt = scan.nextInt();
+                Mythical addedMyth = new Mythical(animal, orig, dang, foodTyp, foodAmt, rand.nextInt(49) + 1, rand.nextInt(49) + 1);
+                z.zooList.add(addedMyth);
+            } else if (type == 2) {
+                Paranormal addedPara = new Paranormal(animal, orig, dang, rand.nextInt(49) + 1, rand.nextInt(49) + 1);
+                z.zooList.add(addedPara);
+            } else if (type == 3) {
+                LingerLing addedLing = new LingerLing(animal, orig, dang, rand.nextInt(49) + 1, rand.nextInt(49) + 1);
+                z.zooList.add(addedLing);
+            } else if (type == 4) {
+                FossilRelative addedFoss = new FossilRelative(animal, orig, dang, rand.nextInt(49) + 1, rand.nextInt(49) + 1);
+                z.zooList.add(addedFoss);
+            }
+        }
+
     }
-    
+
     private static void removeAnimal(Zoo z) {
         if (z.zooList.size() <= 10) {
-                    System.out.println("You can't go below 10 animals!");
-                } else {
-                    System.out.println("What animal would you like to remove?");
-                    boolean found = false;
-                    String animal = scan.nextLine();
-                    animal = scan.nextLine();
-                    for (Animal a : z.zooList) {
-                        if (a.name.equals(animal)) {
-                            found = true;
-                            z.zooList.remove(a);
-                        }
-                    }
-                    if (!found) {
-                        System.out.println("Animal not found.");
-                    }
+            System.out.println("You can't go below 10 animals!");
+        } else {
+            System.out.println("What animal would you like to remove?");
+            boolean found = false;
+            String animal = scan.nextLine();
+            animal = scan.nextLine();
+            ArrayList<Animal> remove = new ArrayList();
+            for (Animal a : z.zooList) {
+                if (a.name.equals(animal)) {
+                    found = true;
+                    remove.add(a);
                 }
+            }
+            z.zooList.removeAll(remove);
+            if (!found) {
+                System.out.println("Animal not found.");
+            }
+        }
     }
-    
+
     private static void addTour(Zoo z) {
         System.out.println("What animal would you like to be put on tour?");
-                boolean found = false;
-                String animal = scan.nextLine();
-                animal = scan.nextLine();
-                for (Animal a : z.zooList) {
-                    if (a.name.equals(animal)) {
-                        found = true;
-                        if (a.onTour) {
-                            System.out.println("Already on tour.");
-                        }
-                        a.onTour = true;
-                    }
+        boolean found = false;
+        String animal = scan.nextLine();
+        animal = scan.nextLine();
+        for (Animal a : z.zooList) {
+            if (a.name.equals(animal)) {
+                found = true;
+                if (a.onTour) {
+                    System.out.println("Already on tour.");
                 }
-                if (!found) {
-                    System.out.println("Animal not found.");
-                }
+                a.onTour = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Animal not found.");
+        }
     }
-    
+
     private static void removeTour(Zoo z) {
         System.out.println("What animal would you like to take off tour?");
-                boolean found = false;
-                String animal = scan.nextLine();
-                animal = scan.nextLine();
-                for (Animal a : z.zooList) {
-                    if (a.name.equals(animal)) {
-                        found = true;
-                        if (!a.onTour) {
-                            System.out.println("Already not on tour.");
-                        }
-                        a.onTour = false;
-                    }
+        boolean found = false;
+        String animal = scan.nextLine();
+        animal = scan.nextLine();
+        for (Animal a : z.zooList) {
+            if (a.name.equals(animal)) {
+                found = true;
+                if (!a.onTour) {
+                    System.out.println("Already not on tour.");
                 }
-                if (!found) {
-                    System.out.println("Animal not found.");
-                }
+                a.onTour = false;
+            }
+        }
+        if (!found) {
+            System.out.println("Animal not found.");
+        }
     }
 }

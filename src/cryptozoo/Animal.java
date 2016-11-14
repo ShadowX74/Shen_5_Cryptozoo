@@ -13,7 +13,7 @@ public abstract class Animal implements ZooAnimal{
     String name, origin;
     int dangerRating;
     int x, y;
-    boolean onTour;
+    boolean onTour, isMap;
     
     public Animal(String nam, String orig, int danger, int x, int y) {
         this.name = nam;
@@ -22,6 +22,7 @@ public abstract class Animal implements ZooAnimal{
         this.x = x;
         this.y = y;
         this.onTour = false;
+        this.isMap = true;
     }
 
     @Override

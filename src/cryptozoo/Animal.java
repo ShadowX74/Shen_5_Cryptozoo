@@ -24,7 +24,13 @@ public abstract class Animal implements ZooAnimal{
         this.onTour = false;
         this.isMap = true;
     }
-
+/***********************************************************************
+* Method: toString
+* Description: Lists animal stats
+* Parameters: N/A
+* Pre-conditions: called to list stats of each animal
+* Post-conditions: stats are returned
+***********************************************************************/
     @Override
     public String toString() {
         return String.format("Name: %s \nOrigin: %s \nDanger Rating: %d", this.name, this.origin, this.dangerRating);

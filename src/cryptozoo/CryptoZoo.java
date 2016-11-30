@@ -16,16 +16,18 @@ import java.util.logging.Logger;
  * @author ShadowX
  */
 public class CryptoZoo {
-
+    /*Scanner and Random*/
     static Scanner scan = new Scanner(System.in);
     static Random rand = new Random();
 
+    /*Animals and map*/
     static char[][] map = new char[51][51];
     static int[][] animalLocs = new int[10][2];
     static ArrayList<Animal> animals = new ArrayList();
     public static ArrayList<Animal> names = new ArrayList();
-    static int bombcounter = 1;
+    static int bombcounter = 1; //player bombs
     
+    //Player object
     static Player player = new Player("Hero", 25, 25, 'U');
 
     /**
@@ -38,20 +40,28 @@ public class CryptoZoo {
         choose(menagerie);
     }
 
+/***********************************************************************
+* Method: choose
+* Description: Asks user what they want to do
+* Parameters: Zoo z, the zoo to interact with
+* Pre-conditions: main method calls, and gives the generated 
+*                menagerie to interact with
+* Post-conditions: Calls explore or manage zoo
+***********************************************************************/
     private static void choose(Zoo z){
         boolean play = true;
         intro();
         while (play) {
             System.out.println("Would you like to 1)catch animals, 2)view your zoo, or 3) quit?");
             int choice = scan.nextInt();
-            if (choice == 1) {
+            if (choice == 1) { //Uer choice
                 player.health = 100;
                 bombcounter = 1;
-                explore();
+                explore(); //Catching animals
                 play = !(player.health == 0);
             } else if (choice == 2){
                 try {
-                    manageZoo(z);
+                    manageZoo(z); //managing zoo
                 } catch (InterruptedException ex) {
                     Logger.getLogger(CryptoZoo.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -60,7 +70,13 @@ public class CryptoZoo {
             }
         }
     }
-    
+/***********************************************************************
+* Method: explore
+* Description: creates safari
+* Parameters: N/A
+* Pre-conditions: user chooses this action in choose method
+* Post-conditions: safari until user quits
+***********************************************************************/
     private static void explore() {
         boolean play = true;
             makeAnimals();
@@ -79,7 +95,13 @@ public class CryptoZoo {
         System.out.println("You can also put animals on tour and remove them.");
         System.out.println("Have fun!");
     }
-
+/***********************************************************************
+* Method: makeAnimals
+* Description: creates list of animals
+* Parameters: N/A
+* Pre-conditions: called to create list of animals
+* Post-conditions: list created
+***********************************************************************/
     private static void makeAnimals() {
         Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5, rand.nextInt(49) +1, rand.nextInt(49) +1);
         Mythical b = new Mythical("Dragon", "Dragon Tales", 10, "Baby Feet", 8, rand.nextInt(49) +1, rand.nextInt(49) +1);

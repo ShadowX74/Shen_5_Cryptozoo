@@ -12,10 +12,16 @@ import java.util.Random;
  * @author ShadowX
  */
 public class Zoo {
-    ArrayList<Animal> zooList = new ArrayList();
+    ArrayList<Animal> zooList = new ArrayList(); //Zoo
     
     static Random rand = new Random();
-    
+/***********************************************************************
+* Method: list
+* Description: creates zoo
+* Parameters: N/A
+* Pre-conditions: called to create zoo of animals
+* Post-conditions: zoo created
+***********************************************************************/
     public void list() {
         Mythical a = new Mythical("Unicorn", "Fairyland", 6, "Rainbows, Magic, Virgins", 5, rand.nextInt(49) +1, rand.nextInt(49) +1);
         Mythical b = new Mythical("Dragon", "Dragon Tales", 10, "Baby Feet", 8, rand.nextInt(49) +1, rand.nextInt(49) +1);
@@ -40,6 +46,13 @@ public class Zoo {
         zooList.add(j);
     }
     
+/***********************************************************************
+* Method: showAll
+* Description: lists all animals
+* Parameters: N/A
+* Pre-conditions: called to see user's animals
+* Post-conditions: all animals listed
+***********************************************************************/
     public void showAll() {
         for (Animal i : zooList) {
             if (i.onTour == true) {
@@ -52,7 +65,13 @@ public class Zoo {
             System.out.println("______________________________________");
         }
     }
-    
+/***********************************************************************
+* Method: showTour
+* Description: lists all animals on tour
+* Parameters: N/A
+* Pre-conditions: called to see user's animals on tour
+* Post-conditions: all animals on tour listed
+***********************************************************************/
     public void showTour() {
         for (Animal i : zooList) {
             if (i.onTour == true) {
@@ -64,7 +83,13 @@ public class Zoo {
             }
         }
     }
-    
+/***********************************************************************
+* Method: showNotTour
+* Description: lists all animals not on tour
+* Parameters: N/A
+* Pre-conditions: called to see user's animals not on tour
+* Post-conditions: all animals not on tour listed
+***********************************************************************/
     public void showNotTour() {
         for (Animal i : zooList) {
             if (i.onTour == false) {

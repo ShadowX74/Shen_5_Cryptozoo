@@ -11,6 +11,7 @@ package cryptozoo;
  * @author ShadowX
  */
 public class Player {
+    /*Player stats*/
     int health = 100;
     int score = 0;
     int level = 1;

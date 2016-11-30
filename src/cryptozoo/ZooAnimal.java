@@ -10,7 +10,7 @@ package cryptozoo;
  * @author ShadowX
  */
 public interface ZooAnimal {
-    
+    /*Interface skeleton methods*/
     public void setFoodType(String food);
 
     public String getFoodType();
